@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoor Morgen Ook · Bescherm je oren vandaag</title>
+<meta name="description" content="Vanavond stopt de muziek. Een piep misschien niet. Beloof dat je bij je volgende feest oordoppen draagt.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="Hoor Morgen Ook">
+<meta property="og:description" content="Vanavond stopt de muziek. Een piep misschien niet. Doe mee en bescherm je oren.">
+<meta property="og:image" content="img/team.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230B0B0C'/%3E%3Cg fill='none' stroke='%23FF6B1A' stroke-linecap='round'%3E%3Cpath d='M14 12a8 8 0 0 1 0 16' stroke-width='3.4'/%3E%3Cpath d='M17.5 6a14 14 0 0 1 0 28' stroke-width='2.9' opacity='.75'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="home">
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="index.html" aria-label="Hoor Morgen Ook, home">
+    <span>Hoor <em>Morgen</em> Ook</span>
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 12a8 8 0 0 1 0 16"/><path d="M17.5 6a14 14 0 0 1 0 28"/></svg>
+  </a>
+  <nav>
+    <a href="#feiten">Feiten</a>
+    <a href="#actie">Onze actie</a>
+    <a href="over-ons.html">Over ons</a>
+    <a class="nav-cta naar-belofte" href="#belofte">Doe mee</a>
+  </nav>
+</header>
+
+<main>
+  <!-- 1. OPENING -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"><img src="img/team_uv.jpg" alt=""><canvas id="golf"></canvas></div>
+    <div class="wrap hero-inner">
+      <p class="kicker reveal">Een campagne van HvA-studenten</p>
+      <h1 class="reveal">Vanavond stopt de muziek.<br><span class="oranje">Een piep misschien niet.</span></h1>
+      <p class="lead reveal">Na een feest suizen je oren. Meestal gaat dat over. Maar de schade in je binnenoor kan blijvend zijn, ook als je niets meer hoort.</p>
+      <div class="hero-knoppen reveal">
+        <button class="knop knop-licht" id="piepknop" type="button" aria-pressed="false">
+          <span class="piep-icoon" aria-hidden="true"></span><span class="piep-tekst">Hoor de piep</span>
+        </button>
+        <a class="knop naar-belofte" href="#belofte">Ik doe mee <span aria-hidden="true">↓</span></a>
+      </div>
+      <p class="piep-uitleg" id="piepuitleg" hidden>Dit is hoe tinnitus voor veel mensen klinkt. Nu stop je hem met één klik. Met tinnitus kan dat niet.</p>
+      <a class="teller-regel naar-belofte reveal" href="#belofte">
+        <strong class="teller-getal" data-teller>55</strong> mensen beschermen hun oren al. Jij ook? →
+      </a>
+    </div>
+  </section>
+
+  <div class="tape" aria-hidden="true"><div class="tape-rol">
+    <span>Oordoppen in</span><span>Afstand houden</span><span>Pauze nemen</span><span>Hoor morgen ook</span>
+    <span>Oordoppen in</span><span>Afstand houden</span><span>Pauze nemen</span><span>Hoor morgen ook</span>
+  </div></div>
+
+  <!-- 2. HOE HARD IS HARD -->
+  <section class="db" id="hard">
+    <div class="wrap db-grid">
+      <div class="db-tekst">
+        <p class="kicker">Hoe hard is hard?</p>
+        <h2>Op ons feest maten we pieken tot <span class="oranje">129&nbsp;dB</span>.</h2>
+        <p>De Nederlandse afspraak voor feesten en festivals is gemiddeld maximaal 103 dB, gemeten over 15 minuten. De WHO adviseert 100 dB. Elke 3 dB erbij is twee keer zoveel geluidsenergie voor je oren.</p>
+        <p class="klein">Gemeten met een telefoon-app, dus indicatief. Bronnen: Convenant Preventie Gehoorschade 2024–2027, WHO (2022).</p>
+      </div>
+      <div class="meter" aria-label="Geluidsmeter van 60 tot 130 decibel">
+        <div class="meter-balk"><div class="meter-vulling" id="meterVulling"></div></div>
+        <ul class="meter-schaal">
+          <li style="--p:0"><b>60 dB</b> Gesprek</li>
+          <li style="--p:.29"><b>80 dB</b> Druk verkeer</li>
+          <li style="--p:.57"><b>100 dB</b> Advies WHO</li>
+          <li class="grens" style="--p:.614"><b>103 dB</b> Max. NL-afspraak</li>
+          <li class="piek" style="--p:1"><b>129 dB</b> Piek op ons feest</li>
+        </ul>
+        <div class="meter-lezing"><span id="meterGetal">60</span> dB</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FEITEN -->
+  <section class="feiten" id="feiten">
+    <div class="wrap">
+      <p class="kicker">Het probleem</p>
+      <h2 class="reveal">Iedereen kent de piep.<br>Bijna niemand doet er iets aan.</h2>
+      <div class="kaarten">
+        <article class="kaart reveal">
+          <div class="groot">&lt;&nbsp;1&nbsp;op&nbsp;3</div>
+          <p>jongeren in Nederland draagt oordoppen op plekken met harde muziek.</p>
+          <cite>De Zeeuw e.a. (2026), 1.637 jongeren van 12–25 jaar</cite>
+        </article>
+        <article class="kaart reveal">
+          <div class="groot">Blijvend</div>
+          <p>Lawaaischade in je binnenoor herstelt niet. Ook als de piep weggaat, kan er al schade zijn.</p>
+          <cite>Gezondheidsraad (2024)</cite>
+        </article>
+        <article class="kaart reveal">
+          <div class="groot">58,7%</div>
+          <p>van de jongeren die wij spraken, heeft wel eigen oordoppen. Vergeten is de grootste reden om ze niet te dragen. Het probleem is niet hebben, maar meenemen.</p>
+          <cite>Eigen enquête Hoor Morgen Ook, 46 jongeren</cite>
+        </article>
+      </div>
+      <a class="pijl-link naar-belofte" href="#belofte">Neem ze voortaan mee. Beloof het hieronder <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <!-- 4. ONZE ACTIE -->
+  <section class="actie" id="actie">
+    <div class="wrap">
+      <p class="kicker">Wat wij deden</p>
+      <h2 class="reveal">17 oktober, Schagen.<br><span class="oranje">±55 feestgangers.</span> Allemaal langs de Sound Pitstop.</h2>
+      <div class="stappen">
+        <div class="stap reveal"><span>1</span><h3>Ervaar</h3><p>15 seconden de tinnitusklank. Iedereen vond hem irritant. Juist dat opende het gesprek.</p></div>
+        <div class="stap reveal"><span>2</span><h3>Check</h3><p>Een paar vragen over hoe jij luistert en uitgaat.</p></div>
+        <div class="stap reveal"><span>3</span><h3>Bescherm</h3><p>Gratis oordoppen mee, met uitleg. Gesponsord door onze partner STFU.</p></div>
+      </div>
+      <div class="galerij">
+        <figure class="reveal"><img src="img/setup.jpg" alt="De Sound Pitstop met flyers, oordoppen en een geluidsmeter op een groot scherm" loading="lazy"></figure>
+        <figure class="reveal"><img src="img/laptop7500.jpg" alt="Laptop die de tinnitusklank van 7500 Hz afspeelt bij de Sound Pitstop" loading="lazy"></figure>
+        <figure class="reveal"><img src="img/hidde_oordop.jpg" alt="Hidde op het feest, met een oordop in" loading="lazy"></figure>
+        <figure class="reveal"><img src="img/labcoat_headphones.jpg" alt="Teamlid in labjas zet een koptelefoon op voor de tinnitusklank" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TIPS -->
+  <section class="tips" id="tips">
+    <div class="wrap">
+      <p class="kicker">Zo doe je het</p>
+      <h2 class="reveal">Vier dingen.<br>Meer is het niet.</h2>
+      <ol class="tiplijst">
+        <li class="reveal"><b>Neem muziekoordoppen mee</b>Kies oordoppen met een filter: ze dempen het geluid en houden de muziek helder.</li>
+        <li class="reveal"><b>Doe ze in vóór binnenkomst</b>Dan vergeet je het niet. Zorg dat ze goed aansluiten.</li>
+        <li class="reveal"><b>Geef speakers de ruimte</b>Ga verder van de speakers staan, en combineer dat met oordoppen.</li>
+        <li class="reveal"><b>Pak een muziekpauze</b>Zoek elke 2 uur minstens 15 minuten een rustige plek op.</li>
+      </ol>
+      <p class="klein">Tips gebaseerd op I Love My Ears (VeiligheidNL). Oordoppen nodig? Je haalt ze bij de drogist of bij onze partner <a href="#" id="stfuLink">STFU</a> in Schagen.</p>
+    </div>
+  </section>
+
+  <!-- 6. BELOFTE -->
+  <section class="belofte" id="belofte">
+    <div class="wrap belofte-grid">
+      <div class="belofte-tekst">
+        <p class="kicker">De belofte</p>
+        <h2>Ik draag oordoppen bij mijn <span class="oranje">volgende feest.</span></h2>
+        <div class="grote-teller">
+          <strong class="teller-getal" data-teller>55</strong>
+          <span>mensen beloofden het al</span>
+        </div>
+        <p class="klein">Inclusief de 55 feestgangers van onze actie op 17 oktober.</p>
+      </div>
+
+      <form class="formulier" id="formulier" novalidate autocomplete="off">
+        <label>Voornaam
+          <input name="naam" id="naam" maxlength="40" required autocomplete="off" autocapitalize="words" spellcheck="false" placeholder="Bijv. Sanne">
+        </label>
+        <label>Leeftijd
+          <input name="leeftijd" id="leeftijd" type="number" inputmode="numeric" min="16" max="85" placeholder="16 – 85">
+        </label>
+        <fieldset>
+          <legend>Hoe vaak ga je naar een feest of festival?</legend>
+          <div class="keuzes">
+            <label><input type="radio" name="uitgaan" value="Nooit"><span>Nooit</span></label>
+            <label><input type="radio" name="uitgaan" value="Zelden"><span>Zelden</span></label>
+            <label><input type="radio" name="uitgaan" value="Soms"><span>Soms</span></label>
+            <label><input type="radio" name="uitgaan" value="Vaak"><span>Vaak</span></label>
+            <label><input type="radio" name="uitgaan" value="Altijd"><span>Altijd</span></label>
+          </div>
+        </fieldset>
+        <!-- lokveld: onzichtbaar voor mensen -->
+        <div class="lok" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="knop knop-groot" type="submit" id="verstuur">Ik beloof het</button>
+        <p class="melding" id="melding" role="status" aria-live="polite"></p>
+        <p class="privacy">Deze site gebruiken we voor ons onderzoek aan de HvA.</p>
+      </form>
+
+      <div class="bedankt" id="bedankt" hidden>
+        <div class="bedankt-icoon" aria-hidden="true">🎧</div>
+        <h3 id="bedanktTitel">Jij bent de 87e die zijn oren beschermt!</h3>
+        <p>Spreek het af met je vrienden: wie neemt de oordoppen mee?</p>
+        <button class="knop" type="button" id="deelknop">Deel met je vrienden</button>
+      </div>
+
+      <div class="admin" id="admin" hidden>
+        <p class="admin-label">Admin</p>
+        <button class="knop knop-groot" type="button" id="adminBelofte">Ik beloof het (admin)</button>
+        <p class="melding" id="adminMelding" role="status" aria-live="polite"></p>
+        <button class="knop knop-licht" type="button" id="adminPauze">Beloftes pauzeren</button>
+        <button class="admin-uit" type="button" id="adminUit">Admin verlaten</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="voet">
+  <div class="wrap voet-grid">
+    <div>
+      <p class="voet-slogan">Hoor morgen ook.<br><span class="oranje">Bescherm je oren vandaag.</span></p>
+    </div>
+    <div class="voet-links">
+      <a href="over-ons.html">Over ons</a>
+      <a href="https://www.instagram.com/hoormorgenook" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@hoormorgenook" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <p class="klein">Hidde, Cas, Josh &amp; Tom · Commerciële Economie · Hogeschool van Amsterdam</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
